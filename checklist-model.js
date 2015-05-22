@@ -24,7 +24,7 @@ angular.module('checklist-model', [])
           arr.push(item);
       }
     return arr;
-  }  
+  }
 
   // remove
   function remove(arr, item, comparator) {
@@ -61,9 +61,9 @@ angular.module('checklist-model', [])
 
     // watch UI checked change
     scope.$watch('checked', function(newValue, oldValue) {
-      if (newValue === oldValue) { 
+      if (newValue === oldValue) {
         return;
-      } 
+      }
       var current = getter(scope.$parent);
       if (newValue === true) {
         setter(scope.$parent, add(current, value, comparator));
@@ -75,7 +75,7 @@ angular.module('checklist-model', [])
         checklistChange(scope);
       }
     });
-    
+
     // declare one function to be used for both $watch functions
     function setChecked(newArr, oldArr) {
         scope.checked = contains(newArr, value, comparator);
@@ -96,9 +96,9 @@ angular.module('checklist-model', [])
     terminal: true,
     scope: true,
     compile: function(tElement, tAttrs) {
-      if (tElement[0].tagName !== 'INPUT' || tAttrs.type !== 'checkbox') {
-        throw 'checklist-model should be applied to `input[type="checkbox"]`.';
-      }
+        if (tElement[0].tagName !== 'ION-CHECKBOX' || tAttrs.type !== 'checkbox') {
+            throw 'checklist-model should be applied to `input[type="checkbox"]`.';
+        }
 
       if (!tAttrs.checklistValue) {
         throw 'You should provide `checklist-value`.';
@@ -106,7 +106,7 @@ angular.module('checklist-model', [])
 
       // exclude recursion
       tElement.removeAttr('checklist-model');
-      
+
       // local scope var storing individual checkbox model
       tElement.attr('ng-model', 'checked');
 
