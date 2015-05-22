@@ -1,5 +1,6 @@
-## checklist-model
-AngularJS directive for list of checkboxes
+## ionic ready checklist-model
+AngularJS directive for list of checkboxes. This is a forked project with some small changes to support <ion-checkbox> directive.
+I recommend you to look to [Ion-Checkbox](http://ionicframework.com/docs/api/directive/ionCheckbox/) directive which is pretty simple and useful. I used this one here because I want to keep track of checked items without change my Lazy load arrays of objects.
 
 ### Why this is needed?  
 In Angular one checkbox `<input type="checkbox" ng-model="...">` is linked 
